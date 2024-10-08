@@ -256,8 +256,8 @@ func parse(ctx context.Context, isc *investgo.InstrumentsServiceClient, db *stor
 		candles, err := marketDataServiceClient.GetCandles(
 			instrument.Instruments[j].Uid,
 			investapi.CandleInterval_CANDLE_INTERVAL_DAY,
-			time.Now().Add(-60*30*24*time.Hour),
-			time.Now().Add(-48*30*24*time.Hour),
+			time.Now().Add(-12*30*24*time.Hour),
+			time.Now(),
 			investapi.GetCandlesRequest_CANDLE_SOURCE_UNSPECIFIED,
 			20000000,
 		)
